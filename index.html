@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern Web Development 101</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/homepage.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <script>
+
+        // Set the date we're counting down to
+        var countDownDate = new Date("Jan 30, 2019 15:37:25").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get todays date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("time").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("time").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+
+
+        var i = 0;
+        var txt = 'Coming Soon...'+
+            'A whole new Series on Modern Web Development';
+        var speed = 50;
+
+        window.onload = function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("soon").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+
+<section class="hero is-dark is-large">
+    <div class="hero-head">
+<nav class="navbar is-black" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://mwd101.org">
+            <h3 style="font-family:'Cooper Black'">MWD</h3>
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+
+        <div class="navbar-start">
+            <a class="navbar-item">
+                <i class="fab fa-facebook"></i>
+            </a>
+
+            <a class="navbar-item">
+                <i class="fab fa-twitter"></i>
+            </a>
+
+            <a class="navbar-item">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a class="navbar-item">
+                <i class="fab fa-google"></i>
+            </a>
+
+        </div>
+
+        <div class="navbar-end">
+            <a class="navbar-item">
+                Home
+            </a>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    More
+                </a>
+
+                <div class="navbar-dropdown" style="background: gray">
+                    <a class="navbar-item">
+                        About
+                    </a>
+                    <a class="navbar-item">
+                        Contact
+                    </a>
+                    <hr class="navbar-divider">
+                    <a class="navbar-item">
+                        Report an issue
+                    </a>
+                </div>
+            </div>
+
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button is-primary">
+                        <strong><p><i class="fa fa-user"></i> Sign up</p></strong>
+                    </a>
+                    <a class="button is-light">
+                        <p><i class="fa fa-power-off"></i> Log in</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    </div>
+
+    <div class="hero-body background">
+
+        <h1 id="time" style="font-family: monospace; font-size: 2rem; width:30%; color: #22e4e4;">
+        </h1>
+
+        <h1 id="soon" style="font-family: 'Agency FB'; font-size: 2rem; width:30%; ">
+        </h1>
+        <div class="columns">
+            <div class="column is-one-fifths">
+                <progress class="progress is-success" value="60" max="100">60%</progress>
+            </div>
+            <div class="column"></div>
+            <div class="column"></div>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer" style="background-color: #05060a">
+    <div class="content has-text-centered">
+
+        <div class="columns is-centered">
+            <div class="column is-1">
+                <p style="color: whitesmoke; padding-top: 5px; font-family: 'Copperplate Gothic Bold'; font-size: 20px;">Subscribe</p>
+            </div>
+            <div class="column is-5">
+                <input class="input" type="text" placeholder="Email">
+            </div>
+            <div class="column-1">
+                <button class="button is-danger" style="margin-top: 12px;" type="submit">Submit</button>
+            </div>
+        </div>
+
+        <p style="color:whitesmoke;">
+            <strong style="color: aqua">MWD -</strong> Modern Web Development</a>.
+            <br>
+            <i>An awesome web series.</i>
+            <br>
+            Copyright 2018.
+            All right reserved
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+
+.background
+{
+    background-image: url("../img/background.jpg");
+    margin-top: -53px;
+    height: -webkit-fill-available;
+    background-repeat: no-repeat;
+    width: 100%;
+}
